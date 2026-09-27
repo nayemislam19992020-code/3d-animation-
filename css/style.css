@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #dce9ff;
+
+    overflow: hidden;
+}
+
+
+/* =====================================
+   THREE JS SCENE
+===================================== */
+
+#scene {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    cursor: grab;
+
+    touch-action: none;
+}
+
+#scene:active {
+    cursor: grabbing;
+}
+
+#scene canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =====================================
+   LEFT CONTENT
+===================================== */
+
+#bottom-left {
+    position: absolute;
+
+    left: 6%;
+
+    bottom: 8%;
+
+    width: 380px;
+
+    max-width: 85%;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+#product-title {
+    font-size: clamp(
+        30px,
+        4vw,
+        55px
+    );
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    color: #17213b;
+
+    margin-bottom: 18px;
+
+    line-height: 1;
+}
+
+
+#description {
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #46536d;
+
+    max-width: 370px;
+}
+
+
+/* =====================================
+   NAV BUTTONS
+===================================== */
+
+#nav-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    pointer-events: auto;
+}
+
+
+.nav-btn {
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 2px solid #17213b;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+
+    display: grid;
+
+    place-items: center;
+
+    transition: 0.3s ease;
+}
+
+
+.nav-btn:hover {
+    background: #17213b;
+
+    transform:
+        translateY(-3px)
+        scale(1.08);
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            23,
+            33,
+            59,
+            0.25
+        );
+}
+
+
+.nav-btn svg {
+    width: 25px;
+
+    height: 25px;
+
+    fill: none;
+
+    stroke: #17213b;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    transition: 0.3s;
+}
+
+
+.nav-btn:hover svg {
+    stroke: white;
+}
+
+
+/* =====================================
+   COUNTER
+===================================== */
+
+#counter {
+    position: absolute;
+
+    right: 6%;
+
+    bottom: 9%;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #17213b;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 768px) {
+
+    #bottom-left {
+        bottom: 5%;
+
+        left: 6%;
+
+        width: 300px;
+    }
+
+
+    #product-title {
+        font-size: 30px;
+
+        letter-spacing: -1px;
+    }
+
+
+    #description {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    #nav-buttons {
+        margin-top: 20px;
+
+        gap: 10px;
+    }
+
+
+    .nav-btn {
+        width: 45px;
+
+        height: 45px;
+    }
+
+
+    .nav-btn svg {
+        width: 21px;
+
+        height: 21px;
+    }
+
+
+    #counter {
+        bottom: 6%;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    #bottom-left {
+        bottom: 4%;
+
+        left: 5%;
+
+        max-width: 75%;
+    }
+
+
+    #product-title {
+        font-size: 26px;
+    }
+
+
+    #description {
+        font-size: 12px;
+
+        max-width: 240px;
+    }
+
+
+    #counter {
+        right: 5%;
+
+        bottom: 5%;
+
+        font-size: 14px;
+    }
+}
